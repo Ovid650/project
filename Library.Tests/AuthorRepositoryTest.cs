@@ -17,16 +17,16 @@ namespace LibraryDataAccess.Tests
 
         public AuthorRepositoryTests()
         {
-            // Setup in-memory database options
+            
             _options = new DbContextOptionsBuilder<LibraryContext>()
                             .UseInMemoryDatabase(databaseName: "LibraryTestDb_Author")
                             .Options;
 
-            // Initialize the in-memory context and repository
+            
             _context = new LibraryContext(_options);
             _repository = new AuthorRepository(_context);
 
-            // Seed the database with initial data
+           
             _context.Authors.AddRange(
                 new Author { AuthorId = 1, AuthorName = "Author 1" },
                 new Author { AuthorId = 2, AuthorName = "Author 2" }
